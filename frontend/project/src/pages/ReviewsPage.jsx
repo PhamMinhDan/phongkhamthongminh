@@ -50,37 +50,7 @@ export default function ReviewsPage() {
       rating: 5,
       date: '2 Tháng 10, 2024',
       content: 'Chảy máu cam suốt. Đến đây bác sĩ xử lý cầm máu rất nhanh và hiệu quả. Không đau, không khó chịu. Giá cả công bằng. Rất hài lòng!'
-    },
-    {
-      id: '7',
-      name: 'Chị Vũ Thu G',
-      title: 'Khách hàng',
-      rating: 5,
-      date: '29 Tháng 9, 2024',
-      content: 'Khám định kỳ ở đây đã 2 năm rồi. Mỗi lần khám đều rất cẩn thận. Phòng khám luôn sạch sẽ, vệ sinh tốt. Đội ngũ nhân viên thân thiện.'
-    },
-    {
-      id: '8',
-      name: 'Anh Tô Minh H',
-      title: 'Khách hàng',
-      rating: 5,
-      date: '25 Tháng 9, 2024',
-      content: 'Viêm xoang mà bác sĩ nội soi để quan sát, rồi hướng dẫn cách vệ sinh vùng mũi xoang. Giờ đã tốt hẳn. Bác sĩ giỏi lắm!'
-    },
-    {
-      id: '9',
-      name: 'Chị Bùi Hoa I',
-      title: 'Khách hàng',
-      rating: 5,
-      date: '20 Tháng 9, 2024',
-      content: 'Gọi tư vấn trước khi khám rất tế nhị. Bác sĩ lắng nghe, hỏi kỹ về triệu chứng rồi mới chỉ định xét nghiệm. Khám xong giảm được 80% triệu chứng.'
     }
-  ];
-
-  const stats = [
-    { label: 'Đánh giá trung bình', value: '4.9/5' },
-    { label: 'Tổng đánh giá', value: '2,847' },
-    { label: 'Bệnh nhân hài lòng', value: '98%' }
   ];
 
   return (
@@ -89,36 +59,16 @@ export default function ReviewsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Đánh Giá & Nhận Xét
+              Đánh Giá Từ Bệnh Nhân
             </h1>
             <p className="text-xl text-gray-600">
-              Ý kiến của bệnh nhân về dịch vụ của chúng tôi
+              Nghe những câu chuyện thực tế từ bệnh nhân đã trải nghiệm dịch vụ của chúng tôi
             </p>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-md text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">{stat.value}</div>
-              <p className="text-gray-600">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mb-8">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
-            ))}
-          </div>
-          <p className="text-center text-gray-600 text-lg">
-            Hơn 98% bệnh nhân sẽ giới thiệu phòng khám cho bạn bè và gia đình
-          </p>
-        </div>
-
         <div className="space-y-6">
           {reviews.map((review) => (
             <div

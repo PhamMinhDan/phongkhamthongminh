@@ -18,10 +18,10 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">ENT</span>
+              <span className="text-white font-bold text-xl">2CTW</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Phòng Khám ENT</h1>
+              <h1 className="text-xl font-bold text-gray-900">Phòng Khám thông minh</h1>
               <p className="text-xs text-gray-600">Chuyên khoa Tai-Mũi-Họng</p>
             </div>
           </div>
@@ -45,10 +45,6 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:0123456789" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm">0123 456 789</span>
-            </a>
             <button
               onClick={() => scrollToSection('appointment')}
               className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium"
@@ -85,10 +81,6 @@ export default function Header() {
             <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 text-gray-700">
               Liên Hệ
             </button>
-            <a href="tel:0123456789" className="flex items-center space-x-2 py-2 text-gray-700">
-              <Phone className="w-4 h-4" />
-              <span>0123 456 789</span>
-            </a>
             <button
               onClick={() => scrollToSection('appointment')}
               className="w-full bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium"

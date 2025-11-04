@@ -5,6 +5,7 @@ import CoreValues from '../components/CoreValues';
 import ServicesSection from '../components/ServicesSection';
 import DoctorsSection from '../components/DoctorsSection';
 import Testimonials from '../components/Testimonials';
+import Contact from '../components/Contact'; // Import Contact
 import Footer from '../components/Footer';
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <ServicesSection />
       <DoctorsSection />
       <Testimonials />
+      <Contact /> {/* Sử dụng thành phần Contact */}
       <Footer />
     </div>
   );

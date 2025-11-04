@@ -36,13 +36,13 @@ export default function AboutPage() {
           <div className="relative">
             <img
               src="https://images.pexels.com/photos/4021808/pexels-photo-4021808.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Phòng khám"
-              className="rounded-2xl shadow-xl"
+              alt="Phòng khám ENT"
+              className="w-full h-[400px] object-cover rounded-xl shadow-xl"
             />
           </div>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 mb-20">
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
           <div className="bg-white rounded-xl p-8 shadow-md text-center">
             <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <div className="text-3xl font-bold text-gray-900 mb-2">15+</div>

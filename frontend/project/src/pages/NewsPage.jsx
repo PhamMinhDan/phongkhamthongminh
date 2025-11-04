@@ -29,33 +29,6 @@ export default function NewsPage() {
       image: 'https://images.pexels.com/photos/4021808/pexels-photo-4021808.jpeg?auto=compress&cs=tinysrgb&w=800',
       author: 'BS. Lê Văn C',
       date: '1 Tháng 10, 2024'
-    },
-    {
-      id: '4',
-      title: 'Chăm Sóc Tai Bao Nhiêu Tuổi Cần Bắt Đầu?',
-      excerpt: 'Tìm hiểu thời điểm lý tưởng để bắt đầu chăm sóc sức khỏe tai từ các chuyên gia.',
-      content: 'Chăm sóc tai nên bắt đầu từ tuổi thơ. Trẻ em cần khám tai ngoài để kiểm tra tình trạng sản xuất ráy tai, và khám tai trong để phát hiện các vấn đề về thính giác. Người lớn nên khám ít nhất 1 lần mỗi năm.',
-      image: 'https://images.pexels.com/photos/5327656/pexels-photo-5327656.jpeg?auto=compress&cs=tinysrgb&w=800',
-      author: 'BS. Phạm Thị D',
-      date: '24 Tháng 9, 2024'
-    },
-    {
-      id: '5',
-      title: 'Ù Tai: Nguyên Nhân và Cách Xử Lý',
-      excerpt: 'Hiểu rõ về ù tai giúp bạn tìm ra giải pháp điều trị phù hợp.',
-      content: 'Ù tai là triệu chứng mà bệnh nhân cảm thấy âm thanh kỳ lạ ở tai mà không có nguồn âm ngoài. Nguyên nhân có thể từ tuổi tác, tiếp xúc tiếng ồn lâu dài, viêm tai... Tìm hiểu kỹ nguyên nhân là chìa khóa để điều trị hiệu quả.',
-      image: 'https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=800',
-      author: 'BS. Nguyễn Văn A',
-      date: '17 Tháng 9, 2024'
-    },
-    {
-      id: '6',
-      title: 'Bệnh Chảy Máu Cam: Khi Nào Cần Gặp Bác Sĩ',
-      excerpt: 'Biết cách nhận biết tình trạng chảy máu cam nguy hiểm và xử lý đúng cách.',
-      content: 'Chảy máu cam thường không nguy hiểm nhưng nếu kéo dài hoặc chảy nhiều cần gặp bác sĩ sớm. Các triệu chứng cảnh báo: chảy máu thường xuyên, chảy máu liên tục, cảm thấy mất máu... Phòng khám có dịch vụ cầm máu cam chuyên nghiệp.',
-      image: 'https://images.pexels.com/photos/5327580/pexels-photo-5327580.jpeg?auto=compress&cs=tinysrgb&w=800',
-      author: 'BS. Trần Thị B',
-      date: '10 Tháng 9, 2024'
     }
   ];
 
@@ -65,51 +38,45 @@ export default function NewsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Tin Tức & Thông Tin
+              Tin Tức & Cập Nhật
             </h1>
             <p className="text-xl text-gray-600">
-              Cập nhật kiến thức về sức khỏe Tai-Mũi-Họng
+              Cập nhật kiến thức y khoa và thông tin mới nhất từ phòng khám
             </p>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid gap-8">
+        <div className="space-y-8">
           {news.map((article, index) => (
             <div
               key={article.id}
-              className={`bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all ${
-                index === 0 ? 'md:grid md:grid-cols-2 gap-8 items-center' : ''
-              }`}
+              className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
             >
               {index === 0 ? (
                 <>
-                  <div className="h-80 md:h-96 overflow-hidden rounded-xl">
+                  <div className="relative h-96">
                     <img
                       src={article.image}
                       alt={article.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
-                  </div>
-                  <div className="p-8">
-                    <span className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                      Tin Tức Mới
-                    </span>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                      {article.title}
-                    </h2>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {article.content}
-                    </p>
-                    <div className="flex items-center space-x-6 text-sm text-gray-500">
-                      <div className="flex items-center space-x-1">
-                        <User className="w-4 h-4" />
-                        <span>{article.author}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{article.date}</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6 text-white">
+                      <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
+                      <p className="mb-4 leading-relaxed">{article.content}</p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-4 text-sm">
+                          <div className="flex items-center space-x-1">
+                            <User className="w-4 h-4" />
+                            <span>{article.author}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="w-4 h-4" />
+                            <span>{article.date}</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

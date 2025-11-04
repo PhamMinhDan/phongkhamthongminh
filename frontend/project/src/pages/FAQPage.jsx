@@ -3,7 +3,7 @@ import { ChevronDown, MessageSquare } from 'lucide-react';
 import Footer from '../components/Footer';
 
 export default function FAQPage() {
-  const [expandedId, setExpandedId] = useState<string | null>('faq-1');
+  const [expandedId, setExpandedId] = useState('faq-1');
 
   const faqs = [
     {
@@ -40,40 +40,9 @@ export default function FAQPage() {
       id: 'faq-6',
       category: 'Giá Cả',
       question: 'Tại sao giá khác nhau tùy từng dịch vụ?',
-      answer: 'Giá khác nhau tùy vào loại dịch vụ, thời gian khám, thiết bị sử dụng, và chuyên môn của bác sĩ. Khám ngoài (nghe khám) rẻ hơn khám nội soi do không sử dụng thiết bị đắt tiền.'
-    },
-    {
-      id: 'faq-7',
-      category: 'Giá Cả',
-      question: 'Có giảm giá cho bệnh nhân khác nhau không?',
-      answer: 'Có, chúng tôi có các chương trình ưu đãi: Gói khám gia đình giảm 20%, khám định kỳ giảm 15%, bệnh nhân nạn nhân chiến tranh giảm 30% theo quy định. Vui lòng liên hệ để tìm hiểu chi tiết.'
-    },
-    {
-      id: 'faq-8',
-      category: 'Dịch Vụ',
-      question: 'Nội soi Tai-Mũi-Họng có đau không?',
-      answer: 'Nội soi không gây đau, chỉ có cảm giác kích thích nhẹ. Chúng tôi sử dụng thiết bị hiện đại và kỹ thuật chuyên nghiệp để đảm bảo sự thoải mái của bệnh nhân.'
-    },
-    {
-      id: 'faq-9',
-      category: 'Dịch Vụ',
-      question: 'Bệnh viêm tai ngoài có cần nội soi?',
-      answer: 'Không phải lúc nào cũng cần. Bác sĩ sẽ khám ngoài trước, nếu cần kiểm tra chi tiết mới sử dụng nội soi. Nội soi giúp phát hiện mức độ viêm, mức độ tổn thương để điều trị chính xác.'
-    },
-    {
-      id: 'faq-10',
-      category: 'Hỗ Trợ',
-      question: 'Làm thế nào để liên hệ với bác sĩ sau khám?',
-      answer: 'Bạn có thể tái khám hoặc liên hệ qua: Điện thoại: 0123 456 789, Zalo: 0987 654 321. Bác sĩ sẽ tư vấn tiếp theo điện thoại nếu cần. Tài liệu khám sẽ được cấp ngay sau khám.'
+      answer: 'Giá khác nhau tùy vào loại dịch vụ, thời gian khám, thiết bị sử dụng, và chuyên môn của bác sĩ.'
     }
   ];
-
-  const categories = ['Tất Cả', ...new Set(faqs.map(f => f.category))];
-  const [selectedCategory, setSelectedCategory] = useState('Tất Cả');
-
-  const filteredFaqs = selectedCategory === 'Tất Cả'
-    ? faqs
-    : faqs.filter(f => f.category === selectedCategory);
 
   return (
     <div className="pt-20">
@@ -81,65 +50,52 @@ export default function FAQPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              FAQ & Hỗ Trợ
+              Câu Hỏi Thường Gặp
             </h1>
             <p className="text-xl text-gray-600">
-              Câu hỏi thường gặp và hỗ trợ từ phòng khám
+              Những thông tin hữu ích để giải đáp thắc mắc của bạn
             </p>
           </div>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex flex-wrap gap-2 justify-center mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full font-medium transition-all ${
-                selectedCategory === cat
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="space-y-4 mb-16">
-          {filteredFaqs.map((faq) => (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="space-y-6 mb-20">
+          {faqs.map((faq) => (
             <div
               key={faq.id}
-              className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-blue-300 transition-colors"
+              className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
             >
               <button
                 onClick={() => setExpandedId(expandedId === faq.id ? null : faq.id)}
-                className="w-full p-6 flex items-start justify-between hover:bg-blue-50 transition-colors text-left"
+                className="w-full flex justify-between items-center p-6 text-left"
               >
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900">
+                <div>
+                  <span className="text-blue-600 font-semibold text-sm">
+                    {faq.category}
+                  </span>
+                  <h3 className="text-lg font-bold text-gray-900 mt-1">
                     {faq.question}
                   </h3>
-                  <p className="text-xs text-gray-500 mt-1">{faq.category}</p>
                 </div>
                 <ChevronDown
-                  className={`w-5 h-5 text-blue-600 flex-shrink-0 ml-4 transition-transform ${
+                  className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${
                     expandedId === faq.id ? 'rotate-180' : ''
                   }`}
                 />
               </button>
-
               {expandedId === faq.id && (
-                <div className="px-6 py-4 bg-blue-50 border-t border-gray-200">
-                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                <div className="p-6 pt-0">
+                  <p className="text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </div>
               )}
             </div>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl p-8 text-center">
             <div className="text-4xl mb-3">📞</div>
             <h3 className="font-bold text-gray-900 mb-2">Gọi Điện</h3>

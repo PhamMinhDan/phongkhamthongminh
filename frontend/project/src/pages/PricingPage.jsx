@@ -49,68 +49,58 @@ export default function PricingPage() {
                     <Check className="w-5 h-5 text-green-600" />
                     <span className="text-gray-700">Thời gian: {pkg.duration} phút</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Khám toàn diện Tai-Mũi-Họng</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Tư vấn chi tiết từ bác sĩ</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Hóa đơn rõ ràng</span>
-                  </div>
                 </div>
-
-                <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                  Đặt Lịch Gói Này
-                </button>
               </div>
             </div>
           ))}
         </div>
 
         <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-          Bảng Giá Chi Tiết Các Dịch Vụ
+          Bảng Giá Dịch Vụ
         </h2>
 
-        <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-gradient-to-r from-blue-600 to-teal-600 text-white">
-                  <th className="px-6 py-4 text-left font-semibold">Dịch Vụ</th>
-                  <th className="px-6 py-4 text-left font-semibold">Loại</th>
-                  <th className="px-6 py-4 text-center font-semibold">Thời Gian</th>
-                  <th className="px-6 py-4 text-right font-semibold">Giá</th>
+        <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                  Dịch Vụ
+                </th>
+                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                  Loại Dịch Vụ
+                </th>
+                <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">
+                  Thời Gian
+                </th>
+                <th className="px-6 py-4 text-right text-sm font-semibold text-gray-900">
+                  Giá
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {entServices.map((service) => (
+                <tr key={service.id} className="border-t border-gray-200">
+                  <td className="px-6 py-4">
+                    <div className="font-medium text-gray-900">{service.name}</div>
+                    <p className="text-sm text-gray-600">{service.description}</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
+                      {getCategoryLabel(service.category)}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 text-center text-gray-700">
+                    {service.duration} phút
+                  </td>
+                  <td className="px-6 py-4 text-right">
+                    <span className="font-semibold text-blue-600 text-lg">
+                      {formatPrice(service.price)}
+                    </span>
+                  </td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {entServices.map((service) => (
-                  <tr key={service.id} className="hover:bg-blue-50 transition-colors">
-                    <td className="px-6 py-4">
-                      <div className="font-medium text-gray-900">{service.name}</div>
-                      <p className="text-sm text-gray-600">{service.description}</p>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
-                        {getCategoryLabel(service.category)}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-center text-gray-700">
-                      {service.duration} phút
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                      <span className="font-semibold text-blue-600 text-lg">
-                        {formatPrice(service.price)}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-8">

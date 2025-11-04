@@ -12,9 +12,6 @@ export default function StickyNavbar() {
     { label: 'Đội Ngũ Bác Sĩ', path: '/doctors' },
     { label: 'Bảng Giá & Gói Khám', path: '/pricing' },
     { label: 'Tin Tức', path: '/news' },
-    { label: 'Đánh Giá', path: '/reviews' },
-    { label: 'FAQ & Hỗ Trợ', path: '/faq' },
-    { label: 'Liên Hệ', path: '/contact' }
   ];
 
   return (
@@ -23,10 +20,10 @@ export default function StickyNavbar() {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">ENT</span>
+              <span className="text-white font-bold text-xl">2CTW</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Phòng Khám ENT</h1>
+              <h1 className="text-xl font-bold text-gray-900">Phòng Khám thông minh</h1>
               <p className="text-xs text-gray-600">Chuyên khoa Tai-Mũi-Họng</p>
             </div>
           </Link>
@@ -44,10 +41,6 @@ export default function StickyNavbar() {
           </div>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:0123456789" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm">0123 456 789</span>
-            </a>
             <Link
               to="/appointment"
               className="bg-teal-500 text-white px-6 py-2.5 rounded-lg hover:bg-teal-600 transition-colors font-medium text-sm"
@@ -80,10 +73,6 @@ export default function StickyNavbar() {
               </Link>
             ))}
             <hr className="my-2" />
-            <a href="tel:0123456789" className="flex items-center space-x-2 py-2 px-4 text-gray-700">
-              <Phone className="w-4 h-4" />
-              <span>0123 456 789</span>
-            </a>
             <Link
               to="/appointment"
               onClick={() => setIsMenuOpen(false)}
